@@ -1,2 +1,6 @@
 # Touchles-media-control-using-Jetson-nano
-This repositary is for the ARM Challenge
+This project implements a real-time touchless media control system using hand gestures on the NVIDIA Jetson Nano. The main goal of the system is to enable users to control a media player without physical interaction by using computer vision and hand gesture recognition. The application runs completely offline on the Jetson Nano and uses a USB webcam to capture live video, MediaPipe for hand landmark detection, OpenCV for video processing, and Python keyboard simulation to control the MPV media player. The system is designed to work efficiently on edge hardware while maintaining low latency and smooth interaction.
+
+The overall workflow begins with the webcam capturing video frames, which are processed using OpenCV. To improve performance on the Jetson Nano, frames are resized before being passed to MediaPipe. MediaPipe detects 21 landmarks for each hand and provides both positional and depth information. These landmarks are then analyzed to determine finger states and recognize gestures. Once a gesture is detected, the system maps it to a specific keyboard command, which is sent to the MPV media player using the pynput library. This allows the media player to respond exactly as if the user pressed keyboard keys manually.
+
+The gesture recognition logic is based on comparing finger tip positions with their corresponding joints. For example, if a fingertip is higher than its joint, the finger is considered open. By combining multiple finge
