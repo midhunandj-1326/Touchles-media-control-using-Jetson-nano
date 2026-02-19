@@ -3,4 +3,4 @@ This project implements a real-time touchless media control system using hand ge
 
 The overall workflow begins with the webcam capturing video frames, which are processed using OpenCV. To improve performance on the Jetson Nano, frames are resized before being passed to MediaPipe. MediaPipe detects 21 landmarks for each hand and provides both positional and depth information. These landmarks are then analyzed to determine finger states and recognize gestures. Once a gesture is detected, the system maps it to a specific keyboard command, which is sent to the MPV media player using the pynput library. This allows the media player to respond exactly as if the user pressed keyboard keys manually.
 
-The gesture recognition logic is based on comparing finger tip positions with their corresponding joints. For example, if a fingertip is higher than its joint, the finger is considered open. By combining multiple finge
+The gesture recognition logic is based on comparing finger tip positions with their corresponding joints. For example, if a fingertip is higher than its joint, the finger is considered open. By combining multiple finger 
